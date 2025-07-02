@@ -23,6 +23,8 @@ namespace ProtncColabo
         public MainWindow()
         {
             InitializeComponent();
+
+            // 이현배 첫커밋
         }
     }
 }
