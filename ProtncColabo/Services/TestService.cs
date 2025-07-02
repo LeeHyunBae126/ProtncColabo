@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProtncColabo.Services
 {
-    internal class TestService
+    public class TestService
     {
+        int i = 0;
     }
 }

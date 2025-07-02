@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProtncColabo.Repositorys
 {
-    internal class TestRepository
+    public class TestRepository
     {
+        int i = 0;
     }
 }
