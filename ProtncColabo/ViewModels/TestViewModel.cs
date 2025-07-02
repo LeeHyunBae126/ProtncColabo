@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProtncColabo.ViewModels
 {
-    internal class TestViewModel
+    public class TestViewModel
     {
+        int i = 0;
     }
 }

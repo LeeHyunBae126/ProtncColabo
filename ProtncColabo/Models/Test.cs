@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProtncColabo.Models
 {
-    internal class Test
+    public class Test
     {
+        int i = 0;
     }
 }
