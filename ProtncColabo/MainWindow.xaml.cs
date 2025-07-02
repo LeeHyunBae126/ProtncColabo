@@ -24,7 +24,7 @@ namespace ProtncColabo
         {
             InitializeComponent();
 
-            // 이현배 첫커밋
+            // 이현배 첫커밋 retry
         }
     }
 }
