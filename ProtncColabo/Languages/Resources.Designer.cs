@@ -61,11 +61,47 @@ namespace ProtncColabo.Languages {
         }
         
         /// <summary>
+        ///   EmployeeId과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EmployeeId {
+            get {
+                return ResourceManager.GetString("EmployeeId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Exit과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Scan과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Scan {
+            get {
+                return ResourceManager.GetString("Scan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ScanTime과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ScanTime {
+            get {
+                return ResourceManager.GetString("ScanTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Status과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         

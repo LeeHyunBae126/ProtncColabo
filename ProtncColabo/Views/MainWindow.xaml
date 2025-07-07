@@ -3,19 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProtncColabo"
+        xmlns:local="clr-namespace:ProtncColabo"    
         xmlns:lang="clr-namespace:ProtncColabo.Languages"
+        xmlns:vm="clr-namespace:ProtncColabo.ViewModels"
         mc:Ignorable="d"
-        Title="QR" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
+        Title="QR 출퇴근 기록기" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBox Width="200" Margin="0,0,10,0" Text="{Binding EmployeeId, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Width="100" Content="{Binding [Scan], Source={x:Static lang:LanguageManager.Instance}}" Command="{Binding ScanCommand}" />
             <TextBlock Text="{Binding [Welcome], Source={x:Static lang:LanguageManager.Instance}}" FontSize="24"/>
-            <Button Content="{Binding [Exit], Source={x:Static lang:LanguageManager.Instance}}" Width="100" Height="30"/>
             <ComboBox SelectionChanged="LanguageSelectionChanged" Width="200" Height="30">
                 <ComboBoxItem Content="English" Tag="en" />
                 <ComboBoxItem Content="한국어" Tag="ko" />
             </ComboBox>
+            <Button Content="{Binding [Exit], Source={x:Static lang:LanguageManager.Instance}}" Width="100" Height="30"/>
         </StackPanel>
-    </Grid>
+
+        <ListView ItemsSource="{Binding Logs}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{Binding [EmployeeId], Source={x:Static lang:LanguageManager.Instance}}" Width="100" DisplayMemberBinding="{Binding EmployeeId}" />
+                    <GridViewColumn Header="{Binding [Status], Source={x:Static lang:LanguageManager.Instance}}" Width="80" DisplayMemberBinding="{Binding Status}" />
+                    <GridViewColumn Header="{Binding [ScanTime], Source={x:Static lang:LanguageManager.Instance}}" Width="200" DisplayMemberBinding="{Binding ScanTime}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
 
 </Window>
