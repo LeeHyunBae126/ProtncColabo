@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProtncColabo"
+        xmlns:lang="clr-namespace:ProtncColabo.Languages"
         mc:Ignorable="d"
         Title="QR" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <TextBlock Text="{Binding [Welcome], Source={x:Static lang:LanguageManager.Instance}}" FontSize="24"/>
+            <Button Content="{Binding [Exit], Source={x:Static lang:LanguageManager.Instance}}" Width="100" Height="30"/>
+            <ComboBox SelectionChanged="LanguageSelectionChanged" Width="200" Height="30">
+                <ComboBoxItem Content="English" Tag="en" />
+                <ComboBoxItem Content="한국어" Tag="ko" />
+            </ComboBox>
+        </StackPanel>
     </Grid>
+
 </Window>
