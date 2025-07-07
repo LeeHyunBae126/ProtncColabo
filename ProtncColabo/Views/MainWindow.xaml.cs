@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProtncColabo.Languages;
 
 namespace ProtncColabo
 {
@@ -30,6 +33,20 @@ namespace ProtncColabo
 
             // 신재성 첫 커밋
             int i = 0;
+
+        }
+
+        private void LanguageSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                var selectedItem = e.AddedItems[0] as ComboBoxItem;
+                var cultureCode = selectedItem?.Tag as string;
+                if (!string.IsNullOrEmpty(cultureCode))
+                {
+                    LanguageManager.Instance.ChangeCulture(cultureCode);
+                }
+            }
         }
     }
 }
